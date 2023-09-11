@@ -7,6 +7,7 @@ import { LineUp } from "./components/Lineup";
 import { Lineup, Match } from "./types/Match";
 import { Stats } from "./components/Stats";
 import { MatchStats } from "./types/Stats";
+import { Zones } from "./components/Zones";
 
 export default function Match() {
   const [activeItem, setActiveItem] = useState<number | null>(null);
@@ -77,6 +78,15 @@ export default function Match() {
         </div>
         {displayedComponent === "stats" && statsData && (
           <Stats
+            leftTeam={statsData.leftTeam}
+            leftTeamInfo={matchData?.leftTeamInfo}
+            rightTeamInfo={matchData?.rightTeamInfo}
+            rightTeam={statsData.rightTeam}
+          />
+        )}
+
+        {displayedComponent === "zones" && statsData && (
+          <Zones
             leftTeam={statsData.leftTeam}
             leftTeamInfo={matchData?.leftTeamInfo}
             rightTeamInfo={matchData?.rightTeamInfo}

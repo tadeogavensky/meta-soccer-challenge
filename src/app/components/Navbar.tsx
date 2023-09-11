@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             Lineup
           </p>
         </li>
-        <li>
+        <li className="block md:hidden">
           <p
             className={`uppercase py-3 cursor-pointer font-primary text-gray-300  ${
               activeItem === 2 ? "active" : ""

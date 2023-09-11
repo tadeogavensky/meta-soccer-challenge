@@ -5,7 +5,7 @@ import team2 from "@/app/assets/images/team2.png";
 import { TeamStats } from "../types/Stats";
 import { Lineup, TeamInfo } from "../types/Match";
 
-interface StatsPro {
+interface StatsProps {
   leftTeamInfo?: TeamInfo;
   rightTeamInfo?: TeamInfo;
   leftTeam?: TeamStats;
@@ -14,7 +14,7 @@ interface StatsPro {
   rightLineup?: Lineup[];
 }
 
-export const Stats: React.FC<StatsPro> = ({
+export const Stats: React.FC<StatsProps> = ({
   leftTeamInfo,
   leftLineup,
   rightTeamInfo,
@@ -64,66 +64,66 @@ export const Stats: React.FC<StatsPro> = ({
   );
 };
 
-const StatsGraph: React.FC<StatsPro> = ({ leftTeam, rightTeam }) => {
+const StatsGraph: React.FC<StatsProps> = ({ leftTeam, rightTeam }) => {
   // Calculate the proportion of the stats values
 
   return (
     <div className="flex flex-col items-center">
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
-        <p className="text-center">{leftTeam?.shots}</p>
-        <p className="text-center uppercase">Total shots</p>
-        <p className="text-center">{rightTeam?.shots}</p>
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
+        <p className="text-center col-span-1">{leftTeam?.shots}</p>
+        <p className="text-center uppercase col-span-1">Total shots</p>
+        <p className="text-center col-span-1">{rightTeam?.shots}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
-        <p className="text-center">{leftTeam?.shotsOnTarget}</p>
-        <p className="text-center uppercase">Shots on target</p>
-        <p className="text-center">{rightTeam?.shotsOnTarget}</p>
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
+        <p className="text-center col-span-1">{leftTeam?.shotsOnTarget}</p>
+        <p className="text-center uppercase col-span-1">Shots on target</p>
+        <p className="text-center col-span-1">{rightTeam?.shotsOnTarget}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.shotsOffTarget}</p>
         <p className="text-center uppercase">Shots off target</p>
         <p className="text-center">{rightTeam?.shotsOffTarget}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.assists}</p>
         <p className="text-center uppercase">Assists</p>
         <p className="text-center">{rightTeam?.assists}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.passes}</p>
         <p className="text-center uppercase">Passes</p>
         <p className="text-center">{rightTeam?.passes}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.shortPasses}</p>
         <p className="text-center uppercase">Short passes</p>
         <p className="text-center">{rightTeam?.shortPasses}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.longPasses}</p>
         <p className="text-center uppercase">Long passes</p>
         <p className="text-center">{rightTeam?.longPasses}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.fouls}</p>
         <p className="text-center uppercase">Fouls</p>
         <p className="text-center">{rightTeam?.fouls}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.yellowCards}</p>
         <p className="text-center uppercase">Yellow cards</p>
         <p className="text-center">{rightTeam?.yellowCards}</p>
       </div>
 
-      <div className="grid grid-cols-3 grid-rows-2 text-white">
+      <div className="grid grid-cols-3 grid-rows-2 text-white w-full">
         <p className="text-center">{leftTeam?.redCards}</p>
         <p className="text-center uppercase">Red cards</p>
         <p className="text-center">{rightTeam?.redCards}</p>
